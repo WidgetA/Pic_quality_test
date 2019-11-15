@@ -32,7 +32,7 @@ for i in range(frames):
     #     wrong_frame.append(i)
     # else:
     #     pass
-    print((npy == bmp).all())
+    print(npy == bmp)
 
     print(f'frame {i} has finished!')
 
