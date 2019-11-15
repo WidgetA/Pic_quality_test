@@ -9,7 +9,7 @@ ret = True
 frame_count = 1
 while ret:
     ret, img = cap.read()
-    if len(img) == 0:
+    if img is None:
         continue
     else:
         pass
