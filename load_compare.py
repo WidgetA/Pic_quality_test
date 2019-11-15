@@ -18,7 +18,8 @@ frames = 0
 if len(npy_list) == len(bmp_list) == len(png_list):
     frames = len(npy_list)
 else:
-    pass
+    print('error!')
+    exit()
 
 wrong_frame = []
 for i in range(frames):
