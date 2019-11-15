@@ -22,10 +22,10 @@ else:
 
 wrong_frame = []
 for i in range(frames):
-    npy = np.load(npy_list[i])
-    bmp = cv2.imread(bmp_list[i])
-    png = cv2.imread(png_list[i])
-    ffmpeg = cv2.imread(ffmpeg_list[i])
+    npy = np.load('./npy' + npy_list[i])
+    bmp = cv2.imread('./bmp' + bmp_list[i])
+    png = cv2.imread('./png' + png_list[i])
+    ffmpeg = cv2.imread('./ffmpeg' + ffmpeg_list[i])
 
     if (npy == bmp).all() and (npy == png).all() and (npy == ffmpeg).all():
         wrong_frame.append(i)
