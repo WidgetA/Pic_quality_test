@@ -28,7 +28,6 @@ for i in range(frames):
     png = cv2.imread('./png/' + png_list[i])
     ffmpeg = cv2.imread('./ffmpeg/' + ffmpeg_list[i])
 
-    print(npy.shape)
-    print(bmp.shape)
+    print((bmp == png).all())
 
 print(f'{wrong_frame} are different!')
