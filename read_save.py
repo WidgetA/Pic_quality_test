@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import os
 
 video = './test_video.mp4'
 
@@ -13,3 +14,5 @@ while ret:
     cv2.imwrite(f'./test{frame_count}.bmp', img)
     cv2.imwrite(f'./test{frame_count}.png', img, [cv2.IMWRITE_PNG_COMPRESSION, 0])
     np.save(f'./test{frame_count}.npy', img)
+
+os.system("ffmpeg -i ./test_video/test_video.mp4 -f image2 ./ffmpeg/test%d.png")
