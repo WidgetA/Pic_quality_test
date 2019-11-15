@@ -32,4 +32,6 @@ for i in range(frames):
     else:
         continue
 
+    print(f'frame {i} has finished!')
+
 print(f'{wrong_frame} are different!')
