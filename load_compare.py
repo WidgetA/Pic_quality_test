@@ -5,7 +5,7 @@ import os
 
 def listdir_nohidden(path):
     for f in os.listdir(path):
-        if f[0] == '.':
+        if not f[0] == '.':
             yield f
 
 
