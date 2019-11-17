@@ -10,9 +10,9 @@ def listdir_nohidden(path):
 
 
 npy_list = list(listdir_nohidden('./npy'))
-# bmp_list = list(listdir_nohidden('./bmp'))
-# png_list = list(listdir_nohidden('./png'))
-# ffmpeg_list = list(listdir_nohidden('./ffmpeg'))
+bmp_list = list(listdir_nohidden('./bmp'))
+png_list = list(listdir_nohidden('./png'))
+ffmpeg_list = list(listdir_nohidden('./ffmpeg'))
 
 frames = 0
 if len(npy_list) == len(bmp_list) == len(png_list):
