@@ -10,9 +10,9 @@ def listdir_nohidden(path):
 
 
 npy_list = list(listdir_nohidden('./npy'))
-bmp_list = list(listdir_nohidden('./bmp'))
-png_list = list(listdir_nohidden('./png'))
-ffmpeg_list = list(listdir_nohidden('./ffmpeg'))
+# bmp_list = list(listdir_nohidden('./bmp'))
+# png_list = list(listdir_nohidden('./png'))
+# ffmpeg_list = list(listdir_nohidden('./ffmpeg'))
 
 frames = 0
 if len(npy_list) == len(bmp_list) == len(png_list):
@@ -21,16 +21,29 @@ else:
     print('error!')
     exit()
 
-wrong_frame = []
+opencv_frame = []
+ffmpeg_frame = []
 for i in range(frames):
     npy = np.load('./npy/' + npy_list[i])
-    bmp = cv2.imread('./bmp/' + bmp_list[i])
-    png = cv2.imread('./png/' + png_list[i])
-    ffmpeg = cv2.imread('./ffmpeg/' + ffmpeg_list[i])
+    bmp = cv2.imread('./bmp/' + npy_list[i][:-3] + 'bmp')
+    png = cv2.imread('./png/' + npy_list[i][:-3] + 'png')
+    ffmpeg = cv2.imread('./ffmpeg/' + npy_list[i][:-3] + 'png')
 
-    if (npy == bmp).all() and (npy == bmp).all() and (npy == bmp).all():
-        pass
+    if (npy == bmp).all() and (npy == png).all() and (npy == bmp).all():
+        if npy == ffmpeg:
+            pass
+        else:
+            ffmpeg_frame.append(i)
     else:
-        wrong_frame.append(i)
+        opencv_frame.append(i)
 
-print(f'{wrong_frame} are different!')
+if opencv_frame is []:
+    pass
+else:
+    print(f'In opencv, {opencv_frame} are different!')
+
+if ffmpeg_frame is []:
+    pass
+else:
+    print(f'In ffmpeg, {ffmpeg_frame} are different!')
+
