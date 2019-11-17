@@ -30,7 +30,7 @@ for i in range(frames):
     ffmpeg = cv2.imread('./ffmpeg/' + npy_list[i][:-3] + 'png')
 
     if (npy == bmp).all() and (npy == png).all() and (npy == bmp).all():
-        if npy == ffmpeg:
+        if (npy == ffmpeg).all():
             pass
         else:
             ffmpeg_frame.append(i)
